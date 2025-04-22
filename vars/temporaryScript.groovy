@@ -1,15 +1,15 @@
-def buildBuilderImage(script) {
+def buildBuilderImage() {
     sh "mkdir -vp empty"
     writeFile file:'empty/Dockerfile', text:'''FROM scratch'''
-    def img = script.docker.build "jenkins-local-image:test", "empty/"
+    def img = docker.build "jenkins-local-image:test", "empty/"
     return img
 }
 
-def mytest(script) {
-    def img = buildBuilderImage(script)
+def mytest() {
+    def img = buildBuilderImage()
     println "img is of type ${img.getClass()}"
 }
 
-def call(script) {
-    mytest(script)
+def call() {
+    mytest()
 }
