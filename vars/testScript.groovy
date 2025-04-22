@@ -1,6 +1,5 @@
-import org.jenkinsci.plugins.docker.workflow.Docker
 
-Docker.Image buildBuilderImage() {
+def buildBuilderImage() {
     sh "mkdir -vp empty"
     writeFile file:'empty/Dockerfile', text:'''FROM scratch'''
     def img = docker.build "jenkins-local-image:test", "empty/"
@@ -8,7 +7,7 @@ Docker.Image buildBuilderImage() {
 }
 
 def test() {
-    Docker.Image img = buildBuilderImage()
+    def img = buildBuilderImage()
     println "img is of type ${img.getClass()}"
 }
 
