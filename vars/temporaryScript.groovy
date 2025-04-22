@@ -9,7 +9,3 @@ def mytest() {
     def img = buildBuilderImage()
     println "img is of type ${img.getClass()}"
 }
-
-def call() {
-    mytest()
-}
