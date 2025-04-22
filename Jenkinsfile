@@ -5,8 +5,10 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+              script {
                 println GroovySystem.version
                 temporaryScript.test
+              }
             }
         }
     }
