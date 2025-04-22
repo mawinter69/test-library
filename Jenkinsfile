@@ -7,7 +7,7 @@ pipeline {
             steps {
               script {
                 println GroovySystem.version
-                temporaryScript.test
+                temporaryScript.mytest()
               }
             }
         }
