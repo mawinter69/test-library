@@ -6,11 +6,11 @@ def buildBuilderImage() {
     return img
 }
 
-def test() {
+def mytest() {
     def img = buildBuilderImage()
     println "img is of type ${img.getClass()}"
 }
 
 def call() {
-    test()
+    mytest()
 }
