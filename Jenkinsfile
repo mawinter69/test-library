@@ -6,8 +6,8 @@ pipeline {
         stage('Test') {
             steps {
               script {
-                skippableStage("skip", true) {
-                  echo "not slipped"
+                skippableStage("skip", false) {
+                  echo "not skipped"
                 }
               }
             }
