@@ -6,8 +6,9 @@ pipeline {
         stage('Test') {
             steps {
               script {
-                println GroovySystem.version
-                temporaryScript.test()
+                skippableStage("skip", true) {
+                  echo "not slipped"
+                }
               }
             }
         }
